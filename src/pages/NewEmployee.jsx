@@ -43,12 +43,12 @@ export function NewEmployee() {
         console.log("Form Data:", formData);
       
         // Example of sending data to a server (replace with your API endpoint)
-        fetch("https://free-ap-south-1.cosmocloud.io/development/api/employees", {
+        fetch("API", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "projectId": "66aa2490440310e3620e0b30",
-            "environmentId": "66aa2490440310e3620e0b31"
+            "projectId": "",
+            "environmentId": ""
           },
           body: JSON.stringify(formData),
         })

@@ -8,11 +8,11 @@ export function EmployeeList() {
 
 useEffect(() => {
     // Fetch employee data from an API (replace with your endpoint)
-    fetch('https://free-ap-south-1.cosmocloud.io/development/api/employees?limit=5&offset=0', {
+    fetch('API', {
         method: "GET",
         headers: {
-            "projectId": "66aa2490440310e3620e0b30",
-            "environmentId": "66aa2490440310e3620e0b31"
+            "projectId": "",
+            "environmentId": ""
         }
     })
     .then(response => {

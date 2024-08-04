@@ -10,11 +10,11 @@ export function AboutEmployee() {
     const [error, setError] = useState(null);
   
     useEffect(() => {
-      fetch(`https://free-ap-south-1.cosmocloud.io/development/api/employees/${employeeID}`, {
+      fetch(`API`, {
         method: "GET",
         headers: {
-          "projectId": "66aa2490440310e3620e0b30",
-          "environmentId": "66aa2490440310e3620e0b31"
+          "projectId": "",
+          "environmentId": ""
         }
       })
         .then(response => {
@@ -43,27 +43,27 @@ export function AboutEmployee() {
 
   return (
     <div className='employee-page'>
-    <div className="employee-detail-card-container">
-        <div className="employee-detail-card">
-            <h1>{employee.name}</h1>
-            <p>Employee ID: {employee._id}</p>
-            <p>Address: {employee.address}</p>
-            <p>City: {employee.city}</p>
-            <p>Country: {employee.country}</p>
-            <p>ZIP Code: {employee.zip_code}</p>
-            <p>Contact Method: {employee.contact_method}</p>
-            {employee.contact_method === 'phone' && (
-            <p>Phone Number: {employee.phone_number}</p>
-            )}
-            {employee.contact_method === 'email' && (
-            <p>Email: {employee.email}</p>
-            )}
+        <div className="employee-detail-card-container">
+            <div className="employee-detail-card">
+                <h1>{employee.name}</h1>
+                <p>Employee ID: {employee._id}</p>
+                <p>Address: {employee.address}</p>
+                <p>City: {employee.city}</p>
+                <p>Country: {employee.country}</p>
+                <p>ZIP Code: {employee.zip_code}</p>
+                <p>Contact Method: {employee.contact_method}</p>
+                {employee.contact_method === 'phone' && (
+                <p>Phone Number: {employee.phone_number}</p>
+                )}
+                {employee.contact_method === 'email' && (
+                <p>Email: {employee.email}</p>
+                )}
+            </div>
+            <div className="buttons-container">
+                <Link to="/employee"><button className="btn">Show List</button></Link>
+                <Link to="/"><button className="btn">Add Employee</button></Link>
+            </div>
         </div>
-        <div className="buttons-container">
-            <Link to="/employee"><button className="btn">Show List</button></Link>
-            <Link to="/"><button className="btn">Add Employee</button></Link>
-        </div>
-    </div>
     </div>
   )
 }
